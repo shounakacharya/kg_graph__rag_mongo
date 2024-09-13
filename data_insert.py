@@ -46,10 +46,17 @@ def create_mongo_documents():
 def mongo_insert():
     mongo_documents = create_mongo_documents()
     try:
+<<<<<<< HEAD
         uri = os.getenv("ATLAS_CONNECTION_STRING")
         client = MongoClient(uri)
         database = client["langchain_db"]
         collection = database["nodes_relationships"]
+=======
+        uri = "mongodb+srv://snehadasgupta:eie9LxnofWbEHKLv@cluster0.0xm8g3h.mongodb.net/langchain_db"
+        client = MongoClient(uri)
+        database = client["langchain_db"]
+        collection = database["nodes_relationships_1"]
+>>>>>>> 0d12a70 (After adding the MongoDB Insert Logic)
         for doc in mongo_documents:
             collection.insert_one(doc)
     except Exception as e:
