@@ -7,7 +7,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const client = new MongoClient(process.env.ATLAS_CONNECTION_STRING);
+<<<<<<< HEAD
 process.env.OPENAI_API_KEY = process.env.OPENAI_API_KEY1;
+=======
+process.env.OPENAI_API_KEY;
+
+>>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
 
 async function run() {
     try {
