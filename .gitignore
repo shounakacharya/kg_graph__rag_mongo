@@ -11,11 +11,13 @@ node_modules
 .env
 
 # Ignore SASS config files
-<<<<<<< HEAD
 .sass-cache
 __pycache__
 #Ignore PDF Files
 PDF_KG
-=======
 .sass-cache
->>>>>>> 05540d8 (After adding gitignore)
+
+
+#Ignore PDF Files
+PDF_KG
+>>>>>>> c80be57 (adding package.json)
