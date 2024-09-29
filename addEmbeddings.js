@@ -7,15 +7,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const client = new MongoClient(process.env.ATLAS_CONNECTION_STRING);
-process.env.OPENAI_API_KEY;
-
+process.env.OPENAI_API_KEY = "API Key";
 
 async function run() {
     try {
         await client.connect();
         console.log('Connected to MongoDB successfully');
         const database = client.db("langchain_db");
-        const collection = database.collection("knowledge_graph");
+        const collection = database.collection("knowledge_graph1");
         const dbConfig = {
             collection: collection,
             indexName: "vector_index", // The name of the Atlas search index to use.
