@@ -1,17 +1,27 @@
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 from pymongo import MongoClient
+from openai import OpenAI
+from dotenv import load_dotenv
 from pprint import pprint
 from nodes_relationships import nodes,links
 from data_insert import build_lookup_map, create_mongo_documents, mongo_insert
-
-from find_relevant_chunks import find_chunks, chat_completion_backoff
+import os
+import subprocess
+from find_relevant_chunks import find_chunks
 from do_graphlookup import graph_lookup
 from build_graph import  build_graph
 from depth_first_search import depth_first_search
 
 if __name__ == "__main__":
+    load_dotenv()
+    open_ai_key = os.getenv("OPENAI_API_KEY1")
+    print(f"----OpenAI Key in Driver Code is {open_ai_key}")
+    openai_client = OpenAI(api_key=open_ai_key)
     #mongo_insert()
+    subprocess.run(["powershell","-Command","fnm env --use-on-cd | Out-String | Invoke-Expression\nnode addEmbeddings.js\nnode addTags.js"])
+    #subprocess.run(["powershell","-Command","node addEmbeddings.js"])
+    #subprocess.run(["powershell","-Command","node addTags.js"])
     question = input("Please enter your question ")
     tree_depth = input("What is the maximum tree depth you require for Knowledge graph traversal? ")
     tag_docs = find_chunks(question)
@@ -58,7 +68,8 @@ if __name__ == "__main__":
     entity names which are given by slashes. You can chose any of the names to answer the question. Please only answer the question based upon the relationships
     provided and context given and not from your own previous knowledge.
     '''
-    response = chat_completion_backoff(
+    
+    response = openai_client.chat.completions.create(
                         model="gpt-4o",
                         messages=[
                             {"role": "system", "content": prompt},
