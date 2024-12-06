@@ -1,7 +1,6 @@
 from langchain_core.documents import Document
 from langchain_community.graphs.graph_document import GraphDocument, Node, Relationship
 from pymongo import MongoClient
-<<<<<<< HEAD
 from openai import OpenAI
 from dotenv import load_dotenv
 from pprint import pprint

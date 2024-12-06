@@ -9,6 +9,7 @@ dotenv.config();
 const client = new MongoClient(process.env.ATLAS_CONNECTION_STRING);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 process.env.OPENAI_API_KEY = process.env.OPENAI_API_KEY1;
 =======
 process.env.OPENAI_API_KEY;
@@ -17,13 +18,20 @@ process.env.OPENAI_API_KEY;
 =======
 process.env.OPENAI_API_KEY = "API Key";
 >>>>>>> c80be57 (adding package.json)
+=======
+process.env.OPENAI_API_KEY = process.env.OPENAI_API_KEY1;
+>>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
 
 async function run() {
     try {
         await client.connect();
         console.log('Connected to MongoDB successfully');
         const database = client.db("langchain_db");
+<<<<<<< HEAD
         const collection = database.collection("knowledge_graph1");
+=======
+        const collection = database.collection("knowledge_graph");
+>>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
         const dbConfig = {
             collection: collection,
             indexName: "vector_index", // The name of the Atlas search index to use.

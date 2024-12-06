@@ -8,17 +8,19 @@ from tenacity import (
     wait_random_exponential,
 )
 load_dotenv()
-<<<<<<< HEAD
 open_ai_key = os.getenv("OPENAI_API_KEY1")
 print(f"----OpenAI Key in find chunks is {open_ai_key}")
 openai_client = OpenAI(api_key=open_ai_key)
 
 
 '''
+<<<<<<< HEAD
 =======
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 >>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
+=======
+>>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
 @retry(wait=wait_random_exponential(min=1, max=1), stop=stop_after_attempt(6))
 def chat_completion_backoff(**kwargs):
     return openai_client.chat.completions.create(**kwargs)
@@ -26,10 +28,12 @@ def chat_completion_backoff(**kwargs):
 @retry(wait=wait_random_exponential(min=1, max=1), stop=stop_after_attempt(6))
 def embedding_create_backoff(**kwargs):
     return openai_client.embeddings.create(**kwargs)
-<<<<<<< HEAD
 '''
+<<<<<<< HEAD
 =======
 >>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
+=======
+>>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
 
 def find_chunks(question):
     docs = []
@@ -41,7 +45,6 @@ def find_chunks(question):
     k = 3
     multiplier = 10
 
-<<<<<<< HEAD
 #    embeddings = embedding_create_backoff(
 #                    input=question,
 #                    model="text-embedding-ada-002"
@@ -51,6 +54,7 @@ def find_chunks(question):
                     input=question,
                     model="text-embedding-ada-002"
                 )
+<<<<<<< HEAD
 =======
     embeddings = embedding_create_backoff(
                     input=question,
@@ -58,6 +62,8 @@ def find_chunks(question):
                 )
 
 >>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
+=======
+>>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
     query_vector = embeddings.data[0].embedding
 
     agg_pipeline = [
