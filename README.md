@@ -22,6 +22,10 @@ Prep Steps
     For Node.js: 
     For the Node JS files we have a package.json and you will be able to use npm install to install all the packages needed.
 
+    OPENAI_API_KEY1=
+    ATLAS_CONNECTION_STRING=
+    PDF = 
+
 3. Vectorise the documents and store in MongoDB:
     Provide - ATLAS_CONNECTION_STRING and OPENAI_API_KEY in the environment file or the js file.
     Run node addEmbeddings.js to generate the embeddings with your PDF files.

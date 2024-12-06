@@ -8,11 +8,15 @@ node_modules
 *.txt
 
 # Ignore files related to API keys
-.env
+./.env
+./.gitignore
 
 # Ignore SASS config files
 .sass-cache
+<<<<<<< HEAD
 __pycache__
+=======
+>>>>>>> cadc039 (Removed .env values)
 #Ignore PDF Files
 PDF_KG
 .sass-cache
