@@ -1,11 +1,4 @@
 # kg_graph__rag_mongo
-<<<<<<< HEAD
-<<<<<<< HEAD
-Test
-=======
-Test
->>>>>>> 43d628c (Changes to readme)
-=======
 This guide explores how to leverage MongoDB's capabilities to create and manipulate graph representations using both Python and Node.js. By utilizing these two popular programming languages, we can demonstrate the versatility of MongoDB in different development environments, showcasing how to perform essential Graph RAG to represent and analyze graphs can provide valuable insights into complex relationships and interactions within data combining the Graph and RAG data in MongoDB. 
 
 
@@ -53,4 +46,3 @@ Running the application
 
 1. Run driver_code.py
     
->>>>>>> 6447527 (update the readme)

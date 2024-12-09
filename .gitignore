@@ -13,15 +13,7 @@ node_modules
 
 # Ignore SASS config files
 .sass-cache
-<<<<<<< HEAD
-__pycache__
-=======
->>>>>>> cadc039 (Removed .env values)
 #Ignore PDF Files
 PDF_KG
 .sass-cache
 
-
-#Ignore PDF Files
-PDF_KG
->>>>>>> c80be57 (adding package.json)

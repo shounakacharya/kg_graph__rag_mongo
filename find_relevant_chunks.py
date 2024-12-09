@@ -14,13 +14,6 @@ openai_client = OpenAI(api_key=open_ai_key)
 
 
 '''
-<<<<<<< HEAD
-=======
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
->>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
-=======
->>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
 @retry(wait=wait_random_exponential(min=1, max=1), stop=stop_after_attempt(6))
 def chat_completion_backoff(**kwargs):
     return openai_client.chat.completions.create(**kwargs)
@@ -29,11 +22,6 @@ def chat_completion_backoff(**kwargs):
 def embedding_create_backoff(**kwargs):
     return openai_client.embeddings.create(**kwargs)
 '''
-<<<<<<< HEAD
-=======
->>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
-=======
->>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
 
 def find_chunks(question):
     docs = []
@@ -54,16 +42,6 @@ def find_chunks(question):
                     input=question,
                     model="text-embedding-ada-002"
                 )
-<<<<<<< HEAD
-=======
-    embeddings = embedding_create_backoff(
-                    input=question,
-                    model="text-embedding-ada-002"
-                )
-
->>>>>>> e8e0a41 (After adding all Python Codes and JS Codes)
-=======
->>>>>>> f834f97 (After pulling from Sneha's Commit and reverting updated local changes)
     query_vector = embeddings.data[0].embedding
 
     agg_pipeline = [
